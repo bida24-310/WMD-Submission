@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Dark Mode Pre-load -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JCI Gaborone Hub</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Your Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div id="background-light" class="animated-bg light-bg"></div>
+  <div id="background-dark" class="animated-bg dark-bg"></div>
+ 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="JCI_GABS_logo-removebg-preview.png" alt="JCI Logo" class="d-inline-block align-top logo-img">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
+          <li class="nav-item"><a class="nav-link" href="elections.html">Elections</a></li>
+          <li class="nav-item"><a class="nav-link" href="forum.html">Mentorship</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li> 
+        </ul>
+        <button id="darkModeToggle" class="btn ms-3">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero section -->
+  <section class="hero-section text-white text-center py-5">
+    <div class="container py-5">
+      <h1 class="display-4 fw-bold" data-aos="zoom-in">JCI Gaborone</h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="200">Building Tomorrow's Leaders Today</p>
+    </div>
+  </section>
+
+  <!-- About JCI Sections with Animations -->
+  <section class="about-jci py-5" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-center mb-4">Who We Are</h2>
+      <p class="lead text-center">
+        JCI (Junior Chamber International) is a global network of young active citizens committed to creating positive change in their communities. At JCI Gaborone, we empower young people to become better leaders, entrepreneurs, and community champions.
+      </p>
+    </div>
+  </section>
+
+  <section class="what-we-do py-5 bg-light" data-aos="fade-left">
+    <div class="container">
+      <h2 class="text-center mb-4">What We Do</h2>
+      <ul class="list-unstyled fs-5">
+        <li>🔧 Community development projects</li>
+        <li>🧠 Leadership training & mentorship</li>
+        <li>📈 Business networking and entrepreneurship support</li>
+        <li>🌍 Promoting global citizenship and collaboration</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="why-join py-5" data-aos="fade-right">
+    <div class="container">
+      <h2 class="text-center mb-4">Why Join JCI Gaborone?</h2>
+      <p class="lead text-center">
+        🌟 Connect with like-minded young professionals<br>
+        📚 Gain access to personal and professional development opportunities<br>
+        💬 Participate in local and international events<br>
+        💡 Make a real impact in your community
+      </p>
+    </div>
+  </section>
+
+  <section class="cta-section text-center py-5 bg-primary text-white" data-aos="zoom-in-up">
+    <div class="container">
+      <h2 class="mb-3">Ready to Join the Movement?</h2>
+      <p class="lead">Become part of a network of young leaders making real change.</p>
+      <button class="btn btn-light btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#joinModal">
+        Join JCI Gaborone
+      </button>
+    </div>
+  </section>
+  
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const icon = darkModeToggle.querySelector('i');
+
+      // Set initial mode
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        icon.classList.replace('fa-moon', 'fa-sun');
+      }
+
+      // Toggle mode
+      darkModeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+          icon.classList.replace('fa-moon', 'fa-sun');
+          localStorage.setItem('darkMode', 'enabled');
+        } else {
+          icon.classList.replace('fa-sun', 'fa-moon');
+          localStorage.setItem('darkMode', 'disabled');
+        }
+      });
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS Animation Init -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+<!-- Join Modal -->
+<div class="modal fade" id="joinModal" tabindex="-1" aria-labelledby="joinModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="joinModalLabel">Join JCI Gaborone</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <a class="btn btn-accent">Join Now</a>
+      </div>
+      <div class="modal-body">
+        <!-- ✅ Added the missing ID here -->
+        <form id="joinForm">
+          <div class="mb-3">
+            <label for="nameInput" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="nameInput" required>
+          </div>
+          <div class="mb-3">
+            <label for="emailInput" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="emailInput" required>
+          </div>
+          <div class="mb-3">
+            <label for="interestInput" class="form-label">Area of Interest</label>
+            <select class="form-select" id="interestInput">
+              <option>Leadership</option>
+              <option>Entrepreneurship</option>
+              <option>Community Development</option>
+              <option>Mentorship</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Success Toast -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999">
+  <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        🎉 Registration successful! We will be in touch soon young leader!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Logic -->
+<script>
+  document.getElementById("joinForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Close modal
+    const joinModal = bootstrap.Modal.getInstance(document.getElementById("joinModal"));
+    joinModal.hide();
+
+    // Reset form
+    e.target.reset();
+
+    // Delay slightly before showing toast (optional for smoother feel)
+    setTimeout(() => {
+      const toast = new bootstrap.Toast(document.getElementById("successToast"));
+      toast.show();
+    }, 400);
+  });
+</script>
+
+
+<script>
+  document.getElementById("joinForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Close modal
+    const joinModal = bootstrap.Modal.getInstance(document.getElementById("joinModal"));
+    joinModal.hide();
+
+    // Reset form
+    e.target.reset();
+
+    // Show toast
+    const toast = new bootstrap.Toast(document.getElementById("successToast"));
+    toast.show();
+  });
+</script>
+
+</body>
+</html>

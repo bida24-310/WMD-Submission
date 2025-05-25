@@ -1,0 +1,119 @@
+
+:root {
+  --color-primary: #2563eb;       /* Indigo Blue */
+  --color-secondary: #38bdf8;     /* Sky Blue for hover/fun */
+  --color-accent: #facc15;        /* Fun Gold */
+
+  --bg-light: #f9fafb;            /* Light background */
+  --text-light: #111827;          /* Almost black text */
+  --card-light: #ffffff;
+
+  --bg-dark: #0f172a;             /* Deep dark background */
+  --text-dark: #e2e8f0;           /* Soft cool text */
+  --card-dark: #322f5c;           /* Midnight card bg */
+}
+
+/* Light Mode */
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s, color 0.3s;
+}
+
+.card {
+  background-color: var(--card-light);
+  color: var(--text-light);
+}
+
+.navbar, .btn-primary, .bg-primary {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--text-light);
+  border: none;
+}
+
+.btn-accent:hover {
+  background-color: #eab308;
+}
+
+/* Dark Mode */
+.dark-mode body {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode .card {
+  background-color: var(--card-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode .navbar {
+  background-color: var(--card-dark) !important;
+}
+
+.dark-mode a {
+  color: var(--color-secondary);
+}
+
+/* Section Titles */
+.about-jci h2,
+.what-we-do h2,
+.why-join h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+.cta-section {
+  border-radius: 20px 20px 0 0;
+}
+
+.modal-content {
+  border-radius: 12px;
+}
+
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.light-bg {
+  background: linear-gradient(270deg, #e0f7fa, #0039f5d2, #038a9c);
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
+  opacity: 1;
+}
+
+.dark-bg {
+  background: linear-gradient(270deg, #a8a8a8, #293774, #004cff);
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
+  opacity: 0;
+}
+
+.dark-mode .light-bg {
+  opacity: 0;
+}
+
+.dark-mode .dark-bg {
+  opacity: 1;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
